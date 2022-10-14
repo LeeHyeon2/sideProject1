@@ -12,6 +12,7 @@
 좋아요(ajax) (id , like(boolean) , 누른 회원(fk) , 게시판(fk))
 북마크(ajax) (id , bookMark(boolean), 누른 회원(fk) , 게시판(fk)) -> 
 
+crud 규격 -> read (get) , create(post) , update (put) , delete (delete) 
 
 기능 : 회원 (회원가입(카카오 로그인도 만든다) , 회원정보 수정 , 회원탈퇴)
        관리자 (회원 리스트 출력 , 글 삭제 가능)
@@ -26,3 +27,9 @@
        ++ 동적쿼리 만들어보기?
       
       
+     /**
+     * 어떤 기능인지 적어주기
+     * @param pageable
+     * @param model
+     * @return
+     */ 의 형식으로 주석처리 달아주기
