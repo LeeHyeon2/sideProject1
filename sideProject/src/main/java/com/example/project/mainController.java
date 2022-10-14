@@ -13,7 +13,7 @@ public class mainController {
     private final mainRepository mainRepository;
     @GetMapping("/")
     public String index(Model model) {
-        testEntity testEntity = mainRepository.findById(2l).get();
+        testEntity testEntity = mainRepository.findById(1l).get();
         String name = testEntity.getName();
         model.addAttribute("name",name);
         return "/index";
