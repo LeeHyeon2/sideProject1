@@ -6,5 +6,12 @@
 </head>
 <body>
     <h2 th:text="test"></h2>
+    <h2 th:text="${entity.memberId}"></h2>
+
+    <form action="/member/saveTest">
+        <input type="text" name="memberEmail">
+        <input type="text" name="memberPassword">
+        <input type="submit">
+    </form>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.example.project.Service;
 
 
+import com.example.project.DTO.MemberDTO;
 import com.example.project.Entity.MemberEntity;
 import com.example.project.Repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,15 +16,20 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public String test() {
-        //세이브 준비
-        MemberEntity save = new MemberEntity();
-        save.setMemberEmail("1");
-        save.setMemberPassword("1");
-        // 세이브
-        memberRepository.save(save);
-
         //출력 하는 구문
         MemberEntity test = memberRepository.findMemberEntityByMemberEmailAndMemberPassword("1", "1");
         return test.getMemberEmail();
     }
+
+    @Override
+    public MemberEntity testEnt() {
+        return memberRepository.findMemberEntityByMemberEmailAndMemberPassword("1", "1");
+    }
+
+    @Override
+    public void saveTest(MemberDTO memberDTO) {
+        MemberEntity memberEntity = MemberEntity.toMemberSaveEntity(memberDTO);
+        memberRepository.save(memberEntity);
+    }
+
 }
