@@ -29,6 +29,8 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public void saveTest(MemberDTO memberDTO) {
         MemberEntity memberEntity = MemberEntity.toMemberSaveEntity(memberDTO);
+        // 수정 처리를 할때 사용할 to Entity
+        // MemberEntity updateMemberEntity = MemberEntity.toMemberUpdateEntity(memberDTO);
         memberRepository.save(memberEntity);
     }
 
