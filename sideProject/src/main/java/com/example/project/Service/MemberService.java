@@ -11,4 +11,6 @@ public interface MemberService {
 
 
     void saveTest(MemberDTO memberDTO);
+
+    void signUp(MemberDTO memberDTO);
 }

@@ -34,4 +34,10 @@ public class MemberServiceImpl implements MemberService{
         memberRepository.save(memberEntity);
     }
 
+    @Override
+    public void signUp(MemberDTO memberDTO) {
+        MemberEntity memberEntity = MemberEntity.toMemberSaveEntity(memberDTO);
+        memberRepository.save(memberEntity);
+    }
+
 }
