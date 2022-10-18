@@ -31,11 +31,13 @@ public class MemberController {
     }
 
     @GetMapping("/signUpForm")
-    public String signUpForm(){return "member/signUp";};
-
+    public String signUpForm() {
+        return "member/signUp";
+    }
 
     @PostMapping("/signUp")
     public String signUp(MemberDTO memberDTO) {
+        System.out.println("memberDTO = " + memberDTO);
         memberService.signUp(memberDTO);
         return "/index";
     }
