@@ -37,6 +37,7 @@ public class MemberController {
     @PostMapping("/signUp")
     public String signUp(MemberDTO memberDTO) {
         memberService.signUp(memberDTO);
+        System.out.println("memberDTO = " + memberDTO);
         return "/index";
     }
 }
