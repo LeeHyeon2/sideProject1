@@ -5,9 +5,10 @@
     <title>회원가입폼</title>
 </head>
 <body>
-<form action="/member/signUp" method="post">
+<form action="/member/signUp" method="post" enctype="multipart/form-data">
     <input type="text" name="memberEmail"placeholder="아이디">
     <input type="text" name="memberPassword"placeholder="비밀번호">
+    <input type="file" name="memberFile">
     <input type="submit">
 </form>
 </body>

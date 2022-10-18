@@ -4,6 +4,7 @@ import com.example.project.Entity.MemberEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @NoArgsConstructor
@@ -13,5 +14,10 @@ public class MemberDTO {
     private String memberEmail;
     private String memberPassword;
     private String memberProfile;
+    private MultipartFile memberFile;
+
+
+    //staticPath
+    private static String filePath = "c:\\spring_img\\";
 
 }

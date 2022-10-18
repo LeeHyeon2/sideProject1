@@ -6,6 +6,7 @@ import com.example.project.Entity.MemberEntity;
 import com.example.project.Repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
 
@@ -36,7 +37,15 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void signUp(MemberDTO memberDTO) {
-        MemberEntity memberEntity = MemberEntity.toMemberSaveEntity(memberDTO);
+        //memberDTO에서 멤버파일 가져오는거
+        MultipartFile memberFile = memberDTO.getMemberFile();
+        String memberFileName= memberFile.getOriginalFilename();
+        memberFileName=System.currentTimeMillis()+"_"+memberFileName;
+//        String savePath= MemberDTO.+ memberFileName;
+
+
+        MemberEntity memberEntity = MemberEntity.toMemberSaveEntity(memberDTO);// 데이터베이스에 저장할때
+
         memberRepository.save(memberEntity);
     }
 
