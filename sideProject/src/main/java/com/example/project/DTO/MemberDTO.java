@@ -18,6 +18,9 @@ public class MemberDTO {
 
 
     //staticPath
-    private static String filePath = "c:\\spring_img\\";
+    private String filePath = "c:\\spring_img\\";
 
+    public String getFilePath() {
+        return this.filePath;
+    }
 }

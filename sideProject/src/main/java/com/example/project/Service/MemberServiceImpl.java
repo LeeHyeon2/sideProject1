@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
     private final MemberRepository memberRepository;
 
     @Override
@@ -39,9 +39,10 @@ public class MemberServiceImpl implements MemberService{
     public void signUp(MemberDTO memberDTO) {
         //memberDTO에서 멤버파일 가져오는거
         MultipartFile memberFile = memberDTO.getMemberFile();
-        String memberFileName= memberFile.getOriginalFilename();
-        memberFileName=System.currentTimeMillis()+"_"+memberFileName;
-//        String savePath= MemberDTO.+ memberFileName;
+        String memberFileName = memberFile.getOriginalFilename();
+        memberFileName = System.currentTimeMillis() + "_" + memberFileName;
+        String savePath = memberDTO.getFilePath() + memberFileName;
+        System.out.println(savePath);
 
 
         MemberEntity memberEntity = MemberEntity.toMemberSaveEntity(memberDTO);// 데이터베이스에 저장할때
