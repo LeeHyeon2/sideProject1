@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.Optional;
 
 @Service
@@ -41,7 +42,7 @@ public class MemberServiceImpl implements MemberService {
         MultipartFile memberFile = memberDTO.getMemberFile();
         String memberFileName = memberFile.getOriginalFilename();
         memberFileName = System.currentTimeMillis() + "_" + memberFileName;
-        String savePath = memberDTO.getFilePath() + memberFileName;
+        String savePath = MemberDTO.getFilePath() + memberFileName;
         System.out.println(savePath);
 
 
